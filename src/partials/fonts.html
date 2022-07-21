@@ -1,0 +1,32 @@
+<div class="accordion-item">
+    <h2 id="fonts-head" class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#fonts-panel" aria-expanded="true" aria-controls="fonts-panel">Font
+        </button>
+    </h2>
+
+    <div id="fonts-panel" class="accordion-collapse collapse show" aria-labelledby="fonts-head"
+         data-bs-parent="#options-acc">
+        <div class="accordion-body">
+            <div class="input-group">
+                <label class="input-group-text" for="font-family-inp">Font family</label>
+                <select id="font-family-inp" class="form-select">
+                </select>
+            </div>
+
+            <!--div class="input-group">
+                <input type="file" class="form-control" aria-describedby="filesLabel"
+                       accept=".ttf"
+                       id="font-file-inp"/>
+                <label class="input-group-text" for="font-file-inp">Font file</label>
+            </div>
+            <small id="font-name" class="float-end mt-1 d-none"></small-->
+
+            <div class="input-group mt-3">
+                <span id="font-size-desc" class="input-group-text">Font size</span>
+                <input id="font-size-inp" class="form-control" type="number" step="1" min="5" max="800" value="32"
+                       aria-label="Font size" aria-describedby="font-size-desc">
+            </div>
+        </div>
+    </div>
+</div>

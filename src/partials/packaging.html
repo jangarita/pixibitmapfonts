@@ -1,0 +1,34 @@
+<div class="accordion-item">
+    <h2 id="pack-head" class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#pack-panel" aria-expanded="true" aria-controls="pack-panel">Packaging
+        </button>
+    </h2>
+
+    <div id="pack-panel" class="accordion-collapse collapse" aria-labelledby="pack-head"
+         data-bs-parent="#options-acc">
+        <div class="accordion-body">
+            <div class="input-group">
+                <span id="pack-padding-desc" class="input-group-text">Padding</span>
+                <input id="pack-padding-inp" class="form-control" type="number" step="1" min="0" max="10" value="1"
+                       aria-label="Padding" aria-describedby="pack-padding-desc">
+            </div>
+
+            <div class="input-group mt-3">
+                <span id="pack-border-desc" class="input-group-text">Border</span>
+                <input id="pack-border-inp" class="form-control" type="number" step="1" min="0" max="10" value="0"
+                       aria-label="Border" aria-describedby="pack-border-desc">
+            </div>
+
+            <div class="form-check form-switch mt-3">
+                <input id="pack-pot-chk" type="checkbox" class="form-check-input" role="switch" checked>
+                <label class="form-check-label" for="pack-pot-chk">Power of two</label>
+            </div>
+
+            <div class="form-check form-switch mt-2">
+                <input id="pack-square-chk" type="checkbox" class="form-check-input" role="switch">
+                <label class="form-check-label" for="pack-square-chk">Square</label>
+            </div>
+        </div>
+    </div>
+</div>

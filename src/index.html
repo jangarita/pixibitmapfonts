@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>PixiJS Bitmap Font from</title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <%= require('html-loader!./partials/gtm/head.html').default %>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row mt-3">
+        <div class="col-12 col-md-5 col-lg-4 col-xl-3">
+            <h4 class="mb-3 text-danger">PixiJS Bitmap Font from</h4>
+
+            <div id="options-acc" class="accordion accordion-flush">
+                <%= require('html-loader!./partials/fonts.html').default %>
+
+                <%= require('html-loader!./partials/characters.html').default %>
+
+                <%= require('html-loader!./partials/packaging.html').default %>
+
+                <%= require('html-loader!./partials/stroke.html').default %>
+            </div>
+
+            <div class="text-end mt-2">
+                <a class="link-dark me-2" href="https://github.com/jangarita/pixibitmapfonts" target="_blank"
+                   title="Open on GitHub">
+                    <i class="bi bi-github fs-1"></i></a>
+                <a class="link-primary" href="" title="About PixiJS Bitmap Font from" data-bs-toggle="modal"
+                   data-bs-target="#about-modal">
+                    <i class="bi bi-info-circle-fill fs-1"></i></a>
+            </div>
+        </div>
+
+        <div class="col-12 mt-3 col-md-7 mt-md-0 col-lg-8 col-xl-9">
+            <%= require('html-loader!./partials/file.html').default %>
+
+            <%= require('html-loader!./partials/preview.html').default %>
+
+            <%= require('html-loader!./partials/atlas.html').default %>
+        </div>
+    </div>
+
+    <%= require('html-loader!./partials/modals/about-modal.html').default %>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</body>
+</html>

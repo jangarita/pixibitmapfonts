@@ -1,0 +1,38 @@
+<div class="accordion-item">
+    <h2 id="chars-head" class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#chars-panel"
+                aria-expanded="true" aria-controls="chars-panel">Characters
+        </button>
+    </h2>
+
+    <div id="chars-panel" class="accordion-collapse collapse" aria-labelledby="chars-head"
+         data-bs-parent="#options-acc">
+        <div class="accordion-body">
+            <div class="dropdown">
+                <button class="btn btn-secondary bg-gradient dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">Prefill with...
+                </button>
+
+                <ul class="dropdown-menu">
+                    <li>
+                        <button id="chars-numeric" type="button" class="dropdown-item">Numeric</button>
+                    </li>
+                    <li>
+                        <button id="chars-alpha" type="button" class="dropdown-item">Alpha</button>
+                    </li>
+                    <li>
+                        <button id="chars-alphanumeric" type="button" class="dropdown-item">Alphanumeric</button>
+                    </li>
+                    <li>
+                        <button id="chars-ascii" type="button" class="dropdown-item">ASCII</button>
+                    </li>
+                    <li>
+                        <button id="chars-ascii-extended" type="button" class="dropdown-item">ASCII extended</button>
+                    </li>
+                </ul>
+            </div>
+            <textarea id="chars-chars" class="form-control text-monospace mt-3" aria-label="Characters" rows="5"
+                      spellcheck="false" wrap="hard"></textarea>
+        </div>
+    </div>
+</div>

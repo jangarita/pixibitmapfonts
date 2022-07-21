@@ -1,0 +1,45 @@
+<div class="accordion-item">
+    <h2 id="stroke-head" class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#stroke-panel" aria-expanded="true" aria-controls="stroke-panel">Stroke
+        </button>
+    </h2>
+
+    <div id="stroke-panel" class="accordion-collapse collapse" aria-labelledby="stroke-head"
+         data-bs-parent="#options-acc">
+        <div class="accordion-body">
+            <div class="input-group">
+                <span id="stroke-size-desc" class="input-group-text">Thickness</span>
+                <input id="stroke-size-inp" class="form-control" type="number" step="1" min="0" max="32" value="2"
+                       aria-label="Size" aria-describedby="stroke-size-desc">
+            </div>
+
+            <div class="input-group mt-3">
+                <label class="input-group-text" for="stroke-join-sel">Line join</label>
+                <select id="stroke-join-sel" class="form-select">
+                    <option value="round" selected>Round</option>
+                    <option value="miter">Miter</option>
+                    <option value="bevel">Bevel</option>
+                </select>
+            </div>
+
+            <div class="input-group mt-3">
+                <span id="stroke-miter-limit-desc" class="input-group-text">Miter limit</span>
+                <input id="stroke-miter-limit-inp" class="form-control" type="number" step="1" min="0" max="32"
+                       value="3" aria-label="Size" aria-describedby="stroke-miter-limit-desc">
+            </div>
+
+            <div class="input-group mt-3">
+                <span id="stroke-color-desc" class="input-group-text">Stroke color</span>
+                <input id="stroke-color-inp" class="form-control p-1 h-auto" type="color" value="#000000"
+                       aria-label="Stroke color" aria-describedby="stroke-color-desc">
+            </div>
+
+            <div class="input-group mt-3">
+                <span id="fill-color-desc" class="input-group-text">Fill color</span>
+                <input id="fill-color-inp" class="form-control p-1 h-auto" type="color" value="#ffffff"
+                       aria-label="Fill color" aria-describedby="fill-color-desc">
+            </div>
+        </div>
+    </div>
+</div>
