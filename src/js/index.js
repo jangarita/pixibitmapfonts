@@ -16,7 +16,7 @@ import FileView from './views/file-view';
 import CharactersView from './views/characters-view';
 
 window.onload = async () => {
-    console.log('\u21E2 PixiJS Bitmap Font from \u21E0');
+    console.log(`\u21E2 PixiJS Bitmap Font from v${window.version} \u21E0`);
 
     new AppController({
         fontModel: new FontModel(),
@@ -30,4 +30,6 @@ window.onload = async () => {
         previewView: new PreviewView(),
         fileView: new FileView(),
     });
+
+    document.getElementById('app-version').textContent = `v${window.version}`;
 };

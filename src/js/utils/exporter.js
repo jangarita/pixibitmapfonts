@@ -65,10 +65,29 @@ export class Exporter {
             chars.appendChild(char);
         }
 
+        const kerningData = this._fontModel.chars
+            .filter(item => item?.[1]?.kerning && Object.keys(item?.[1]?.kerning).length > 0);
+
+        const kernings = xml.createElement('kernings');
+        kernings.setAttribute('count', `${kerningData.length}`);
+
+        for (const charItem of kerningData) {
+            for (const key in charItem[1].kerning) {
+                const kerning = xml.createElement('kerning');
+
+                kerning.setAttribute('first', `${charItem[0]}`);
+                kerning.setAttribute('second', `${key}`);
+                kerning.setAttribute('amount', `${charItem[1].kerning[key]}`);
+
+                kernings.appendChild(kerning);
+            }
+        }
+
         font.appendChild(info);
         font.appendChild(common);
         font.appendChild(pages);
         font.appendChild(chars);
+        font.appendChild(kernings);
         xml.appendChild(font);
 
         return xml;

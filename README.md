@@ -15,19 +15,22 @@ npm install
 npm start
 ```
 
-## TODO
+## Features
 
-This tool is not finished yet, I'll add in a near feature:
-
-* Kerning support
-* Font styles (bold, italic, ...)
-* Fill gradients
-* Adjust letter and line space
-* Effects (shadows, ...)
-* Add custom font
-* Multiple pages support
-* Save/Load settings
-* Preview/Example in other frameworks (Phaser, Unity, ...)
+* Select web safe fonts and size [v0.1.0]
+* Max rect packaging [v0.1.0]
+* Stroke effect [v0.1.0]
+* Export bitmap font as png and fnt [v0.1.0]
+* Preview using PixiJS (PIXI.BitmapFont.install) [v0.1.0]
+* Kerning support [v0.2.0]
+* ~~Font styles (bold, italic, ...)~~ [TODO]
+* ~~Fill gradients~~ [TODO]
+* ~~Adjust letter and line space~~ [TODO]
+* ~~Effects (shadows, ...)~~ [TODO]
+* ~~Add custom font~~ [TODO]
+* ~~Multiple pages support~~ [TODO]
+* ~~Save/Load settings~~ [TODO]
+* ~~Preview/Example in other frameworks (Phaser, Unity, ...)~~ [TODO]
 
 ## License
 

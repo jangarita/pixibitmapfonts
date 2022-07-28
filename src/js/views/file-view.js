@@ -27,7 +27,7 @@ export default class FileView {
     _downloadXmlHandler() {
         if (!this._xmlData || !this._filename) return;
 
-        saveAs(this._getXmlBlob(), `${this._filename}.xml`);
+        saveAs(this._getXmlBlob(), `${this._filename}.fnt`);
     }
 
     async _downloadZipHandler() {
@@ -36,7 +36,7 @@ export default class FileView {
         const zip = new JSZip();
         //const textureBlob = await this._getTextureBlob();
 
-        zip.file(`${this._filename}.xml`, this._getXmlBlob());
+        zip.file(`${this._filename}.fnt`, this._getXmlBlob());
         zip.file(`${this._filename}.png`, this._getTextureBlob());
 
         zip.generateAsync({type: 'blob'})

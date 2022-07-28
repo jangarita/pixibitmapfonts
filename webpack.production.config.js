@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = () => {
     return {
@@ -36,6 +37,9 @@ module.exports = () => {
             ]
         },
         plugins: [
+            new webpack.DefinePlugin({
+                'window.version': JSON.stringify(process.env.npm_package_version),
+            }),
             new CopyWebpackPlugin({
                 patterns: [
                     {
