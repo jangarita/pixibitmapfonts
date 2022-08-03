@@ -23,7 +23,7 @@ npm start
 * Export bitmap font as png and fnt [v0.1.0]
 * Preview using PixiJS (PIXI.BitmapFont.install) [v0.1.0]
 * Kerning support [v0.2.0]
-* ~~Font styles (bold, italic, ...)~~ [TODO]
+* Font styles and variant (bold, italic, small-caps) [v0.3.0]
 * ~~Fill gradients~~ [TODO]
 * ~~Adjust letter and line space~~ [TODO]
 * ~~Effects (shadows, ...)~~ [TODO]

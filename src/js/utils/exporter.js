@@ -15,8 +15,8 @@ export class Exporter {
         const info = xml.createElement('info');
         info.setAttribute('face', this._fontModel.fontFamily);
         info.setAttribute('size', `${this._fontModel.fontSize}`);
-        info.setAttribute('bold', '0'); //TODO: Bold
-        info.setAttribute('italic', '0'); //TODO: Italic
+        info.setAttribute('bold', `${this._fontModel.fontWeight === 'normal' ? '0' : '1'}`);
+        info.setAttribute('italic', `${this._fontModel.fontStyle === 'normal' ? '0' : '1'}`);
         info.setAttribute('charset', '');
         info.setAttribute('unicode', '1');
         info.setAttribute('stretchH', '100');

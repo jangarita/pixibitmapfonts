@@ -14,6 +14,9 @@ export default class FontModel extends EventTarget {
         this._fillColor = '#ffffff';
         this._lineJoin = 'round';
         this._miterLimit = 10;
+        this._style = 'normal';
+        this._weight = 'normal';
+        this._variant = 'normal';
         this._characters = ' ';
 
         this.update();
@@ -28,6 +31,11 @@ export default class FontModel extends EventTarget {
             fill: this.fillColor,
             lineJoin: this.lineJoin,
             miterLimit: this.miterLimit,
+            fontStyle: this.fontStyle,
+            fontWeight: this.fontWeight,
+            fontVariant: this.fontVariant,
+            trim: true,
+            padding: 2,
         }, {
             chars: this.characters,
         });
@@ -99,6 +107,30 @@ export default class FontModel extends EventTarget {
 
     get lineHeight() {
         return this._bitmapFont.lineHeight;
+    }
+
+    get fontStyle() {
+        return this._style;
+    }
+
+    set fontStyle(value) {
+        this._style = value;
+    }
+
+    get fontWeight() {
+        return this._weight;
+    }
+
+    set fontWeight(value) {
+        this._weight = value;
+    }
+
+    get fontVariant() {
+        return this._variant;
+    }
+
+    set fontVariant(value) {
+        this._variant = value;
     }
 
     get characters() {

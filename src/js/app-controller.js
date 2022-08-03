@@ -5,7 +5,15 @@ import {Exporter} from './utils/exporter';
 let _lastUpdate = 0, _updateTimeOut;
 
 export default class AppController {
-    constructor({fontModel, packModel}, {fontsView, charactersView, packagingView, strokeView, atlasView, previewView, fileView}) {
+    constructor({fontModel, packModel}, {
+        fontsView,
+        charactersView,
+        packagingView,
+        strokeView,
+        atlasView,
+        previewView,
+        fileView
+    }) {
         this._fontModel = fontModel;
         this._packModel = packModel;
 
@@ -44,11 +52,16 @@ export default class AppController {
 
         this._fontModel.fontFamily = this._fontsView.fontFamily;
         this._fontModel.fontSize = this._fontsView.fontSize;
+        this._fontModel.fontStyle = this._fontsView.fontStyle;
+        this._fontModel.fontWeight = this._fontsView.fontWeight;
+        this._fontModel.fontVariant = this._fontsView.fontVariant;
+
         this._fontModel.strokeThickness = this._strokeView.thickness;
         this._fontModel.strokeColor = this._strokeView.strokeColor;
         this._fontModel.lineJoin = this._strokeView.lineJoin;
         this._fontModel.miterLimit = this._strokeView.miterLimit;
         this._fontModel.fillColor = this._strokeView.fillColor;
+
         this._fontModel.characters = this._charactersView.characters;
 
         this._packModel.padding = this._packagingView.padding;

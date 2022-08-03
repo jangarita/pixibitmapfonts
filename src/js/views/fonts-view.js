@@ -7,6 +7,9 @@ export default class FontsView extends EventTarget {
         this._panel = document.getElementById('fonts-panel');
         this._fontInp = this._panel.querySelector('#font-family-inp');
         this._sizeInp = this._panel.querySelector('#font-size-inp');
+        this._italicInp = this._panel.querySelector('#font-italic-chk');
+        this._boldInp = this._panel.querySelector('#font-bold-chk');
+        this._smallCapsInp = this._panel.querySelector('#font-small-caps-chk');
 
         this.listFonts().then((fontList) => {
             for (const item of fontList) {
@@ -24,6 +27,9 @@ export default class FontsView extends EventTarget {
 
             this._fontInp.onchange = this._changeFontHandler.bind(this);
             this._sizeInp.onchange = this._changeFontHandler.bind(this);
+            this._italicInp.onchange = this._changeFontHandler.bind(this);
+            this._boldInp.onchange = this._changeFontHandler.bind(this);
+            this._smallCapsInp.onchange = this._changeFontHandler.bind(this);
 
             this._changeFontHandler();
         });
@@ -31,7 +37,6 @@ export default class FontsView extends EventTarget {
 
     async listFonts() {
         const fontCheck = new Set(FONT_LIST.sort());
-
 
         await document.fonts.ready;
 
@@ -56,5 +61,17 @@ export default class FontsView extends EventTarget {
 
     get fontSize() {
         return parseInt(this._sizeInp.value);
+    }
+
+    get fontStyle() {
+        return this._italicInp.checked ? 'italic' : 'normal';
+    }
+
+    get fontWeight() {
+        return this._boldInp.checked ? 'bold' : 'normal';
+    }
+
+    get fontVariant() {
+        return this._smallCapsInp.checked ? 'small-caps' : 'normal';
     }
 }
