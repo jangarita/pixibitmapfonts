@@ -1,0 +1,47 @@
+<div class="accordion-item">
+    <h2 id="shadow-head" class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#shadow-panel" aria-expanded="true" aria-controls="shadow-panel">Drop shadow
+        </button>
+    </h2>
+
+    <div id="shadow-panel" class="accordion-collapse collapse" aria-labelledby="shadow-head"
+         data-bs-parent="#options-acc">
+        <div class="accordion-body">
+            <div class="form-check form-switch">
+                <input id="shadow-chk" type="checkbox" class="form-check-input" role="switch">
+                <label class="form-check-label" for="shadow-chk">Enable</label>
+            </div>
+
+            <div class="input-group mt-3">
+                <span id="shadow-color-desc" class="input-group-text">Color</span>
+                <input id="shadow-color-inp" class="form-control p-1 h-auto" type="color" value="#ff0000"
+                       aria-label="Shadow color" aria-describedby="shadow-color-desc">
+            </div>
+
+            <div class="input-group mt-3">
+                <span id="shadow-alpha-desc" class="input-group-text">Alpha</span>
+                <input id="shadow-alpha-inp" class="form-control" type="number" step="0.1" min="0" max="1"
+                       value="0.8" aria-label="Alpha" aria-describedby="shadow-alpha-desc">
+            </div>
+
+            <div class="input-group mt-3">
+                <span id="shadow-angle-desc" class="input-group-text">Angle</span>
+                <input id="shadow-angle-inp" class="form-control" type="number" step="0.1"
+                       value="16" aria-label="Angle" aria-describedby="shadow-angle-desc">
+            </div>
+
+            <div class="input-group mt-3">
+                <span id="shadow-blur-desc" class="input-group-text">Blur</span>
+                <input id="shadow-blur-inp" class="form-control" type="number" step="1" min="0" max="128"
+                       value="0" aria-label="Blur" aria-describedby="shadow-blur-desc">
+            </div>
+
+            <div class="input-group mt-3">
+                <span id="shadow-distance-desc" class="input-group-text">Distance</span>
+                <input id="shadow-distance-inp" class="form-control" type="number" step="1" min="0"
+                       value="2" aria-label="Distance" aria-describedby="shadow-distance-desc">
+            </div>
+        </div>
+    </div>
+</div>

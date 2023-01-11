@@ -8,6 +8,7 @@ import PackModel from './models/pack-model';
 import FontsView from './views/fonts-view';
 import PackagingView from './views/packaging-view';
 import StrokeView from './views/stroke-view';
+import ShadowView from './views/shadow-view';
 
 import AtlasView from './views/atlas-view';
 import PreviewView from './views/preview-view';
@@ -26,6 +27,7 @@ window.onload = async () => {
         charactersView: new CharactersView(),
         packagingView: new PackagingView(),
         strokeView: new StrokeView(),
+        shadowView: new ShadowView(),
         atlasView: new AtlasView(),
         previewView: new PreviewView(),
         fileView: new FileView(),

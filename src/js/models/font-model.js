@@ -17,6 +17,12 @@ export default class FontModel extends EventTarget {
         this._style = 'normal';
         this._weight = 'normal';
         this._variant = 'normal';
+        this._dropShadow = false;
+        this._dropShadowAlpha = 0.8;
+        this._dropShadowAngle = 16;
+        this._dropShadowBlur = 0;
+        this._dropShadowColor = '#ff0000';
+        this._dropShadowDistance = 2;
         this._characters = ' ';
 
         this.update();
@@ -34,15 +40,30 @@ export default class FontModel extends EventTarget {
             fontStyle: this.fontStyle,
             fontWeight: this.fontWeight,
             fontVariant: this.fontVariant,
+            dropShadow: this.dropShadow,
+            dropShadowAlpha: this.dropShadowAlpha,
+            dropShadowAngle: this.dropShadowAngle,
+            dropShadowBlur: this.dropShadowBlur,
+            dropShadowColor: this.dropShadowColor,
+            dropShadowDistance: this.dropShadowDistance,
             trim: true,
             padding: 2,
         }, {
             chars: this.characters,
+            resolution: 1,
+            padding: 2,
+            anisotropicLevel: 16,
+            mipmap: PIXI.MIPMAP_MODES.ON,
+            alphaMode: PIXI.ALPHA_MODES.PMA,
         });
 
         this._chars = Object.entries(this._bitmapFont.chars);
 
         this.dispatchEvent(new CustomEvent(EVENT_FONT_MODEL_UPDATED));
+    }
+
+    get bitmapFont() {
+        return this._bitmapFont;
     }
 
     get chars() {
@@ -131,6 +152,54 @@ export default class FontModel extends EventTarget {
 
     set fontVariant(value) {
         this._variant = value;
+    }
+
+    get dropShadow() {
+        return this._dropShadow;
+    }
+
+    set dropShadow(value) {
+        this._dropShadow = value;
+    }
+
+    get dropShadowAlpha() {
+        return this._dropShadowAlpha;
+    }
+
+    set dropShadowAlpha(value) {
+        this._dropShadowAlpha = value;
+    }
+
+    get dropShadowAngle() {
+        return this._dropShadowAngle;
+    }
+
+    set dropShadowAngle(value) {
+        this._dropShadowAngle = value;
+    }
+
+    get dropShadowBlur() {
+        return this._dropShadowBlur;
+    }
+
+    set dropShadowBlur(value) {
+        this._dropShadowBlur = value;
+    }
+
+    get dropShadowColor() {
+        return this._dropShadowColor;
+    }
+
+    set dropShadowColor(value) {
+        this._dropShadowColor = value;
+    }
+
+    get dropShadowDistance() {
+        return this._dropShadowDistance;
+    }
+
+    set dropShadowDistance(value) {
+        this._dropShadowDistance = value;
     }
 
     get characters() {

@@ -31,7 +31,7 @@ export default class StrokeView extends EventTarget {
     }
 
     get miterLimit() {
-        return this._miterLimitInp.value;
+        return parseInt(this._miterLimitInp.value);
     }
 
     get strokeColor() {

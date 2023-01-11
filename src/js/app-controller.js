@@ -10,6 +10,7 @@ export default class AppController {
         charactersView,
         packagingView,
         strokeView,
+        shadowView,
         atlasView,
         previewView,
         fileView
@@ -21,6 +22,7 @@ export default class AppController {
         this._charactersView = charactersView;
         this._packagingView = packagingView;
         this._strokeView = strokeView;
+        this._shadowView = shadowView;
 
         this._atlasView = atlasView;
         this._previewView = previewView;
@@ -34,12 +36,13 @@ export default class AppController {
         this._charactersView.addEventListener(EVENT_FONT_STYLE_CHANGED, this._update.bind(this));
         this._packagingView.addEventListener(EVENT_FONT_STYLE_CHANGED, this._update.bind(this));
         this._strokeView.addEventListener(EVENT_FONT_STYLE_CHANGED, this._update.bind(this));
+        this._shadowView.addEventListener(EVENT_FONT_STYLE_CHANGED, this._update.bind(this));
     }
 
     _update() {
         const timeDiff = Date.now() - _lastUpdate;
 
-        if (timeDiff < 150) {
+        if (timeDiff < (1 / 12) * 1000) {
             clearTimeout(_updateTimeOut);
 
             _updateTimeOut = setTimeout(() => this._update(), timeDiff + 10);
@@ -61,6 +64,13 @@ export default class AppController {
         this._fontModel.lineJoin = this._strokeView.lineJoin;
         this._fontModel.miterLimit = this._strokeView.miterLimit;
         this._fontModel.fillColor = this._strokeView.fillColor;
+
+        this._fontModel.dropShadow = this._shadowView.enabled;
+        this._fontModel.dropShadowColor = this._shadowView.color;
+        this._fontModel.dropShadowAlpha = this._shadowView.alpha;
+        this._fontModel.dropShadowAngle = this._shadowView.angle;
+        this._fontModel.dropShadowBlur = this._shadowView.blur;
+        this._fontModel.dropShadowDistance = this._shadowView.distance;
 
         this._fontModel.characters = this._charactersView.characters;
 
