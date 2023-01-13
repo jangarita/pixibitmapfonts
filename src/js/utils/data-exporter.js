@@ -1,4 +1,4 @@
-export class Exporter {
+export class DataExporter {
     constructor(fontModel, packModel) {
         this._fontModel = fontModel;
         this._packModel = packModel;

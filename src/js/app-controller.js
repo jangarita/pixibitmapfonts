@@ -1,6 +1,6 @@
 import {EVENT_FONT_STYLE_CHANGED} from './constants';
 import Atlas from './utils/atlas';
-import {Exporter} from './utils/exporter';
+import {DataExporter} from './utils/data-exporter';
 
 let _lastUpdate = 0, _updateTimeOut;
 
@@ -30,7 +30,7 @@ export default class AppController {
         this._fileView = fileView;
 
         this._atlas = new Atlas();
-        this._exporter = new Exporter(this._fontModel, this._packModel);
+        this._exporter = new DataExporter(this._fontModel, this._packModel);
 
         this._fontsView.addEventListener(EVENT_FONT_STYLE_CHANGED, this._update.bind(this));
         this._charactersView.addEventListener(EVENT_FONT_STYLE_CHANGED, this._update.bind(this));

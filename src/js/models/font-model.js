@@ -1,5 +1,6 @@
 import * as PIXI from 'pixi.js';
 import {EVENT_FONT_MODEL_UPDATED} from '../constants';
+import {parseFontFrom} from '../utils/font-parser';
 
 export default class FontModel extends EventTarget {
     static FONT_NAME = 'CustomFont';
@@ -29,7 +30,7 @@ export default class FontModel extends EventTarget {
     }
 
     update() {
-        this._bitmapFont = PIXI.BitmapFont.from(FontModel.FONT_NAME, {
+        this._bitmapFont = parseFontFrom(FontModel.FONT_NAME, {
             fontFamily: this.fontFamily,
             fontSize: this.fontSize,
             stroke: this.strokeColor,
